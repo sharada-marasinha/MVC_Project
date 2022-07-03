@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CoustmerController">
+    <children>
+        <ImageView fitHeight="137.0" fitWidth="90.0" layoutX="241.0" layoutY="88.0" onDragDetected="#BtnDelete" opacity="0.09" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../image/Black.PNG" />
+            </image>
+        </ImageView>
+        <AnchorPane prefHeight="51.0" prefWidth="600.0" style="-fx-background-color: #130f40;">
+            <effect>
+                <Lighting diffuseConstant="1.44" surfaceScale="1.62">
+                    <bumpInput>
+                        <Shadow />
+                    </bumpInput>
+                    <light>
+
+                    </light>
+                </Lighting>
+            </effect>
+        </AnchorPane>
+        <Label layoutX="149.0" layoutY="-2.0" prefHeight="53.0" prefWidth="309.0" text="Customer Form" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font name="Arial Black" size="35.0" />
+            </font>
+        </Label>
+        <JFXTextField fx:id="txttitle" focusColor="BLACK" layoutX="333.0" layoutY="59.0" onAction="#titleOnacton" prefHeight="29.0" prefWidth="218.0" promptText="Title" unFocusColor="BLACK">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="txtname" focusColor="BLACK" layoutX="334.0" layoutY="111.0" onAction="#nameOnacton" prefHeight="29.0" prefWidth="218.0" promptText="Name">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXTextField>
+        <JFXTextField fx:id="txtpostalcode" focusColor="BLACK" layoutX="334.0" layoutY="220.0" prefHeight="29.0" prefWidth="218.0" promptText="Postal Code">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXTextField>
+        <JFXTextField fx:id="txtprovince" focusColor="BLACK" layoutX="46.0" layoutY="163.0" onAction="#provinceOnacton" prefHeight="29.0" prefWidth="218.0" promptText="Province">
+            <cursor>
+                <Cursor fx:constant="TEXT" />
+            </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+        </JFXTextField>
+        <JFXTextField fx:id="txtcity" focusColor="BLACK" layoutX="335.0" layoutY="166.0" onAction="#cityOnacton" prefHeight="29.0" prefWidth="218.0" promptText="City">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXTextField>
+        <JFXTextField fx:id="txtaddres" focusColor="BLACK" layoutX="47.0" layoutY="110.0" onAction="#adressOnacton" prefHeight="29.0" prefWidth="218.0" promptText="Adress">
+            <cursor>
+                <Cursor fx:constant="TEXT" />
+            </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+        </JFXTextField>
+        <JFXTextField fx:id="txtid" focusColor="BLACK" layoutX="47.0" layoutY="59.0" onAction="#idOnacton" prefHeight="29.0" prefWidth="218.0" promptText="ID" unFocusColor="BLACK">
+            <cursor>
+                <Cursor fx:constant="TEXT" />
+            </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+        </JFXTextField>
+        <JFXButton layoutX="31.0" layoutY="220.0" onAction="#btnadd" prefHeight="31.0" prefWidth="66.0" style="-fx-background-color: #2980b9;" styleClass="edge-button" stylesheets="@../css/Butten.css" text="Add" textFill="WHITE">
+            <font>
+                <Font name="System Bold Italic" size="13.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <JFXButton layoutX="104.0" layoutY="221.0" onAction="#btnupdate" style="-fx-background-color: green;" styleClass="edge-button" stylesheets="@../css/Butten.css" text="Update" textFill="WHITE">
+            <font>
+                <Font name="System Bold Italic" size="13.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <TableView fx:id="cusTable" layoutX="32.0" layoutY="273.0" prefHeight="166.0" prefWidth="525.0" stylesheets="@../css/Table.css">
+            <columns>
+                <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="title" prefWidth="75.0" text="Title" />
+                <TableColumn fx:id="adress" prefWidth="75.0" text="Adress" />
+                <TableColumn fx:id="name" prefWidth="75.0" text="Name" />
+                <TableColumn fx:id="province" prefWidth="75.0" text="Province" />
+                <TableColumn fx:id="city" prefWidth="75.0" text="City" />
+                <TableColumn fx:id="postalCode" prefWidth="75.0" text="Postal Code" />
+            </columns>
+        </TableView>
+        <JFXButton layoutX="175.0" layoutY="221.0" onAction="#btnDelete" style="-fx-background-color: #e17055;" styleClass="edge-button" stylesheets="@../css/Butten.css" text="Delete" textFill="WHITE">
+            <font>
+                <Font name="System Bold Italic" size="13.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <JFXButton layoutX="240.0" layoutY="221.0" onAction="#btnClrar" style="-fx-background-color: #f1c40f;" styleClass="edge-button" stylesheets="@../css/Butten.css" text="Clear" textFill="WHITE">
+            <font>
+                <Font name="System Bold Italic" size="13.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <JFXButton fx:id="btnScerch" layoutX="230.0" layoutY="66.0" onAction="#btnScerch" prefHeight="19.0" prefWidth="42.0" style="-fx-background-color: #6c5ce7;" styleClass="edge-button" stylesheets="@../css/Butten.css" text="Scerch" textFill="WHITE">
+            <font>
+                <Font name="System Bold Italic" size="9.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+    </children>
+</AnchorPane>
