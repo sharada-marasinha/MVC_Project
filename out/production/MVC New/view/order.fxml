@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemController">
+<AnchorPane prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.orderController">
    <children>
       <ImageView fitHeight="137.0" fitWidth="96.0" layoutX="235.0" layoutY="62.0" opacity="0.09" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -26,18 +26,18 @@
             </Label>
          </children>
       </AnchorPane>
-      <JFXTextField layoutX="59.0" layoutY="107.0" prefHeight="25.0" prefWidth="185.0" promptText="Customer ID">
+      <JFXTextField fx:id="txtCustID" layoutX="59.0" layoutY="107.0" prefHeight="25.0" prefWidth="185.0" promptText="Customer ID">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <TableView layoutX="42.0" layoutY="212.0" prefHeight="200.0" prefWidth="516.0" stylesheets="@../css/Table.css">
+      <TableView fx:id="plaseOrderTable" layoutX="36.0" layoutY="208.0" prefHeight="200.0" prefWidth="516.0" stylesheets="@../css/Table.css">
         <columns>
-          <TableColumn prefWidth="78.0" text="Item Code" />
-          <TableColumn prefWidth="127.0" text="Dscription" />
-            <TableColumn prefWidth="103.0" text="QtyOn Hand" />
-            <TableColumn prefWidth="103.0" text="Price" />
-            <TableColumn prefWidth="104.0" text="Total" />
+          <TableColumn fx:id="tbItemCode" prefWidth="78.0" text="Item Code" />
+          <TableColumn fx:id="tbDscription" prefWidth="127.0" text="Dscription" />
+            <TableColumn fx:id="tbQtyonHand" prefWidth="103.0" text="QtyOn Hand" />
+            <TableColumn fx:id="tbPrice" prefWidth="103.0" text="Price" />
+            <TableColumn fx:id="tbTotal" prefWidth="104.0" text="Total" />
         </columns>
       </TableView>
       <Label layoutX="489.0" layoutY="418.0" prefHeight="25.0" prefWidth="54.0" text="Total :" textFill="RED">
@@ -45,30 +45,30 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Label layoutX="539.0" layoutY="418.0" prefHeight="17.0" prefWidth="47.0" text="0.00" textFill="RED">
+      <Label fx:id="lblTotal" layoutX="539.0" layoutY="418.0" prefHeight="17.0" prefWidth="47.0" text="0.00" textFill="RED">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <JFXTextField layoutX="348.0" layoutY="104.0" promptText="Item code">
+      <JFXTextField fx:id="txtItemCode" layoutX="348.0" layoutY="104.0" promptText="Item code">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="59.0" layoutY="152.0" prefHeight="25.0" prefWidth="185.0" promptText="Item quantity ">
+      <JFXTextField fx:id="txtQty" layoutX="59.0" layoutY="152.0" prefHeight="25.0" prefWidth="185.0" promptText="Item quantity ">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXTextField>
-      <JFXButton layoutX="420.0" layoutY="162.0" style="-fx-background-color: #2ecc71;" styleClass="edge-button" stylesheets="@../css/Butten.css" text="Add" textFill="WHITE">
+      <JFXButton layoutX="420.0" layoutY="162.0" onAction="#btnAdd" style="-fx-background-color: #2ecc71;" styleClass="edge-button" stylesheets="@../css/Butten.css" text="Add" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></JFXButton>
-      <JFXButton layoutX="474.0" layoutY="162.0" style="-fx-background-color: #e74c3c;" styleClass="edge-button" stylesheets="@../css/Butten.css" text="Close" textFill="WHITE">
+      <JFXButton layoutX="474.0" layoutY="162.0" onAction="#btnClose" style="-fx-background-color: #e74c3c;" styleClass="edge-button" stylesheets="@../css/Butten.css" text="Close" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></JFXButton>
-      <JFXButton layoutX="321.0" layoutY="162.0" style="-fx-background-color: #3498db;" styleClass="edge-button" stylesheets="@../css/Butten.css" text="Place Order" textFill="WHITE">
+      <JFXButton layoutX="321.0" layoutY="162.0" onAction="#btnPlaseOrder" style="-fx-background-color: #3498db;" styleClass="edge-button" stylesheets="@../css/Butten.css" text="Place Order" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></JFXButton>
@@ -77,7 +77,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="lblId" layoutX="130.0" layoutY="72.0" prefHeight="17.0" prefWidth="70.0" text="s001">
+      <Label fx:id="lblOrderId" layoutX="130.0" layoutY="72.0" prefHeight="17.0" prefWidth="70.0" text="s001">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
