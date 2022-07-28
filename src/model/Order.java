@@ -1,16 +1,16 @@
 package model;
 
-public class order {
+public class Order {
     private String orderid;
     private String custid;
     private double orderdate;
     private double price;
 
-    public order() {
+    public Order() {
 
     }
 
-    public order(String orderid, String custid, double orderdate, double price) {
+    public Order(String orderid, String custid, double orderdate, double price) {
         this.orderid = orderid;
         this.custid = custid;
         this.orderdate = orderdate;
